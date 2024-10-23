@@ -1,0 +1,5 @@
+:root {
+  --header-height: 131px;
+  --footer-height: 51px;
+  --page-height: calc(100vh - var(--header-height) - var(--footer-height));
+}

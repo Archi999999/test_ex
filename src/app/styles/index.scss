@@ -2,3 +2,14 @@
 @forward "boilerplate";
 @forward "fonts";
 @forward "typography";
+@forward "variables";
+
+.main_container {
+  width: 100%;
+  padding: 0 170px;
+}
+
+.page_container {
+  display: flex;
+  min-height: var(--page-height);
+}

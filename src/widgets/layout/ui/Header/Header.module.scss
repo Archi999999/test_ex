@@ -1,0 +1,33 @@
+.header {
+  height: var(--header-height);
+  display: flex;
+  flex-direction: column;
+}
+
+.header_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #E2E8F0;
+  position: relative;
+}
+
+.logo {
+  margin-right: 125px;
+}
+
+.logo_2 {
+  position: absolute;
+  top: 0;
+  left: 236px;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: solid 1px #E2E8F0;
+}
