@@ -1,0 +1,30 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 13px;
+  width: 235px;
+  height: 430px;
+  border: 1px solid #E2E8F0;
+}
+
+.header_cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_favorite {
+  padding: unset;
+  border: none;
+  height: 20px;
+  margin-top: 10px;
+  background: unset;
+  cursor: pointer;
+}
+
+.image_wrapper {
+  position: relative;
+  display: flex;
+  width: 156px;
+  height: 100%;
+  margin: 0 auto;
+}

@@ -10,8 +10,15 @@
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: solid 1px #E2E8F0;
   position: relative;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: #E2E8F0;
+  margin: 0;
 }
 
 .logo {
@@ -21,7 +28,7 @@
 .logo_2 {
   position: absolute;
   top: 0;
-  left: 236px;
+  left: 66px;
 }
 
 .links {
@@ -29,5 +36,4 @@
   gap: 32px;
   padding-top: 15px;
   padding-bottom: 15px;
-  border-bottom: solid 1px #E2E8F0;
 }

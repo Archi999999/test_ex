@@ -8,18 +8,22 @@ export const Header = () => {
         <div className={style.header}>
             <div className={`main_container ${style.header_top}`}>
                 {/*<div>*/}
-                    <Image src="/assets/images/logo.svg" width={116} height={40} alt="logo" className={style.logo}/>
-                    <Image src="/assets/images/logo2.svg" width={51} height={45} alt="logo" className={style.logo_2}/>
-                    <input placeholder="Search" />
+                <Image src="/assets/images/logo.svg" width={116} height={40} alt="logo" className={style.logo}/>
+                <Image src="/assets/images/logo2.svg" width={51} height={45} alt="logo" className={style.logo_2}/>
+                <input placeholder="Search"/>
                 {/*</div>*/}
-                <button/>
+                <button>
+                    Favorite
+                </button>
             </div>
+            <hr className={style.line}/>
             <div className={`main_container ${style.links}`}>
                 <Link href="/">Main page</Link>
                 <Link href="/delivery">Delivery</Link>
                 <Link href="/contact">Contacts</Link>
                 <Link href="/blog">Blog</Link>
             </div>
+            <hr className={style.line}/>
         </div>
     )
 }
