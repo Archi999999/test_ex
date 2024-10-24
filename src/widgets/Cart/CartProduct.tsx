@@ -20,9 +20,10 @@ export const CartProduct = ({product}: Props) => {
                 </button>
             </div>
             <div className={style.image_wrapper}>
-                <Image src={product.image} layout="fill" objectFit="contain"  alt={'image product'}/>
+                <Image src={product.image} fill style={{objectFit: 'contain'}} priority alt={'image product'}
+                       sizes="(max-width: 600px) 30vw, (min-width: 600px) 15vw"/>
             </div>
-            <span>{product.price}</span>
+            <span className={style.price}>{`${product.price} $`}</span>
         </div>
     )
 }

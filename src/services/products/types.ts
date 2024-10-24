@@ -12,3 +12,5 @@ export interface Product {
     image: string;
     rating: Rating;
 }
+
+export type CategoryType = 'men\'s clothing' | 'jewelery' | 'electronics' | 'women\'s clothing'

@@ -1,0 +1,26 @@
+.filters_block {
+  display: flex;
+    flex-direction: column;
+    gap: 16px;
+    //padding-right: 99px;
+}
+
+.button_filter {
+  background-color: unset;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.square {
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--gray);
+  border-radius: 3px;
+
+  &.active {
+    background-color: var(--gray);
+  }
+}

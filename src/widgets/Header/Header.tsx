@@ -4,8 +4,9 @@ import Image from "next/image";
 import style from './Header.module.scss'
 
 export const Header = () => {
+
     return (
-        <div className={style.header}>
+        <header className={style.header}>
             <div className={`main_container ${style.header_top}`}>
                 {/*<div>*/}
                 <Image src="/assets/images/logo.svg" width={116} height={40} alt="logo" className={style.logo}/>
@@ -17,13 +18,13 @@ export const Header = () => {
                 </button>
             </div>
             <hr className={style.line}/>
-            <div className={`main_container ${style.links}`}>
+            <nav className={`main_container ${style.links}`}>
                 <Link href="/">Main page</Link>
                 <Link href="/delivery">Delivery</Link>
                 <Link href="/contact">Contacts</Link>
                 <Link href="/blog">Blog</Link>
-            </div>
+            </nav>
             <hr className={style.line}/>
-        </div>
+        </header>
     )
 }

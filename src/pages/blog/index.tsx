@@ -1,4 +1,4 @@
-import {Layout} from "@/widgets/layout/ui/Layout/Layout";
+import {Layout} from "@/widgets/Layout/Layout";
 
 const Blog = () => {
     return (
