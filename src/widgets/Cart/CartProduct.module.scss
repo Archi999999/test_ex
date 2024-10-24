@@ -5,6 +5,7 @@
   width: 235px;
   height: 430px;
   border: 1px solid #E2E8F0;
+  cursor: pointer;
 }
 
 .header_cart {
@@ -12,13 +13,10 @@
   justify-content: space-between;
 }
 
-.button_favorite {
-  padding: unset;
-  border: none;
-  height: 20px;
+.favorite_icon {
   margin-top: 10px;
-  background: unset;
-  cursor: pointer;
+  width: 20px;
+  box-sizing: border-box;
 }
 
 .image_wrapper {

@@ -4,16 +4,13 @@ import {CartProduct} from "@/widgets/Cart/CartProduct";
 import style from './Catalog.module.scss'
 import {useEffect, useState} from "react";
 import {useSearchParams} from "next/navigation";
-import {useRouter} from "next/router";
 
-const Catalog = () => {
+export const Catalog = () => {
     const [getProducts, {data: products, isError}] = useLazyGetAllProductsQuery()
     const [fetching, setFetching] = useState(false)
     const [limit, setLimit] = useState(6)
     const params = useSearchParams();
     const category = params?.get('category');
-    // const limit = Number(params?.get('limit')) || 6;
-    // const { replace } = useRouter()
 
     useEffect(() => {
         if (category) {
@@ -66,4 +63,3 @@ const Catalog = () => {
     )
 }
 
-export default Catalog;

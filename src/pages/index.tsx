@@ -140,25 +140,17 @@
 
 //------------------------------------------------------------------------------------
 
-import { Layout } from "@/widgets/Layout/Layout";
-
-import style from './MainPage.module.scss';
-import { FiltersBlock } from "@/widgets/FiltersBlock/FiltersBlock";
-import Catalog from "@/widgets/Catalog/Catalog";
-import {Suspense} from "react";
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const MainPage = () => {
+    const router = useRouter();
 
-    return (
-        <Layout title="MainPage">
-            <main className={style.main}>
-                <FiltersBlock/>
-                <Suspense fallback={<h3>Loading...</h3>}>
-                    <Catalog/>
-                </Suspense>
-            </main>
-        </Layout>
-    );
+    useEffect(() => {
+        router.replace('/product');
+    }, [router]);
+
+    return <h3>Loading...</h3>
 }
 
 export default MainPage;

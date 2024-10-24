@@ -37,3 +37,12 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.button {
+  display: flex;
+  flex-direction: column;
+  background-color: unset;
+  cursor: pointer;
+  align-items: center;
+  border: none;
+}
