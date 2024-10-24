@@ -21,7 +21,7 @@ export const Catalog = () => {
         } else {
             getProducts({limit: 6})
         }
-    }, [category]);
+    }, [category, getProducts]);
 
     useEffect(() => {
         if (fetching && limit < 20 ) {
@@ -38,10 +38,14 @@ export const Catalog = () => {
         return ()=> document.removeEventListener("scroll", scrollHandler)
     }, []);
 
-    const scrollHandler = (e: any) => {
-        if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 150){
-            if (!fetching) {
-                setFetching(true)
+    const scrollHandler = (e: Event) => {
+        if (e.target instanceof Document) {
+            const { scrollHeight, scrollTop } = e.target.documentElement;
+
+            if (scrollHeight - (scrollTop + window.innerHeight) < 150) {
+                if (!fetching) {
+                    setFetching(true);
+                }
             }
         }
     }
