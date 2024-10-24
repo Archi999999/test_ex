@@ -1,14 +1,15 @@
 import {useLazyGetAllProductsQuery} from "@/services/products/product";
 import {CartProduct} from "@/widgets/Cart/CartProduct";
-
-import style from './Catalog.module.scss'
 import {useEffect, useState} from "react";
 import {useSearchParams} from "next/navigation";
+
+import style from './Catalog.module.scss'
 
 export const Catalog = () => {
     const [getProducts, {data: products, isError}] = useLazyGetAllProductsQuery()
     const [fetching, setFetching] = useState(false)
     const [limit, setLimit] = useState(6)
+    const [sort, setSort] = useState<'asc' | 'desc'>('asc')
     const params = useSearchParams();
     const category = params?.get('category');
 
@@ -32,7 +33,6 @@ export const Catalog = () => {
         }
     }, [fetching]);
 
-
     useEffect(() => {
         document.addEventListener('scroll', scrollHandler)
         return ()=> document.removeEventListener("scroll", scrollHandler)
@@ -45,6 +45,13 @@ export const Catalog = () => {
             }
         }
     }
+    const handleChangeSort = () => {
+        setSort(prev => prev === 'asc' ? 'desc' : 'asc')
+    }
+
+    const sortedProducts = sort === 'asc'
+        ? products?.slice().sort((a, b) => a.price - b.price)
+        : products?.slice().sort((a, b) => b.price - a.price);
 
 
     if (isError) {
@@ -53,11 +60,11 @@ export const Catalog = () => {
 
     return(
         <div className={style.catalog}>
-            <span>Main {'>'} Catalog</span>
+            <span className={style.span_path}>Main {'>'} <strong>Catalog</strong></span>
             <h2>Catalog</h2>
-            <span>Price v</span>
+            <button className={style.button} onClick={handleChangeSort}>Price {sort === 'asc' ? '↓' : '↑'}</button>
             <div className={style.carts_block}>
-                {products?.map(product=> <CartProduct key={product.id} product={product}/>)}
+                {sortedProducts?.map(product=> <CartProduct key={product.id} product={product}/>)}
             </div>
         </div>
     )

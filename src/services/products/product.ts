@@ -3,7 +3,7 @@ import {Product} from "@/services/products/types";
 
 interface GetAllProductsParams {
     category?: string;
-    sortBy?: string;
+    sort?: string;
     limit?: number;
 }
 

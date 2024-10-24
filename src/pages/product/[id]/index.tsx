@@ -38,13 +38,13 @@ const AboutProduct = ({product}: Props) => {
     return (
         <Layout>
             <section className={style.about_product_container}>
-                <span className={style.span_path}>Main {'>'} Catalog {'>'} {product.title}</span>
+                <span className={style.span_path}>Main {'>'} Catalog {'>'} <strong>{product.title}</strong></span>
                 <div className={style.about_product}>
                     <Image src={product.image} width={192} height={256} alt={'image'}/>
                     <div className={style.info}>
                         <div className={style.info_header}>
                             <div>
-                                <h3>{product.title}</h3>
+                                <h3 className={style.title}>{product.title}</h3>
                                 <span>{product.rating.rate} stars ({product.rating.count} rated)</span>
                             </div>
                             <button  disabled={isFavorite} className={style.button_favorite} onClick={handleAddFavorite}>
